@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Menu, X, LogIn, UserPlus } from "lucide-react"; // Icons
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -55,16 +55,12 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
           <Button variant="outline" size="sm">
-            <LogIn className="h-4 w-4 mr-2" />
             Log In
           </Button>
-          <Button size="sm">
-            <UserPlus className="h-4 w-4 mr-2" />
-            Sign Up
-          </Button>
+          <Button size="sm">Sign Up</Button>
         </div>
       </div>
 
@@ -85,15 +81,11 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <Button variant="outline" size="sm">
-              <LogIn className="h-4 w-4 mr-2" />
               Log In
             </Button>
-            <Button size="sm">
-              <UserPlus className="h-4 w-4 mr-2" />
-              Sign Up
-            </Button>
+            <Button size="sm">Sign Up</Button>
           </div>
         </div>
       )}
