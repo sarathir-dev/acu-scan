@@ -2,6 +2,9 @@
 
 import { motion } from "motion/react";
 import { FeaturesSections } from "./feature-sections";
+import { AnimatedTestimonialsDemo } from "./AnimatedTestimonials";
+import Footer from "./footer";
+import { BentoGridDemo } from "./BentoGrid";
 
 export function HeroSectionOne() {
   return (
@@ -110,12 +113,59 @@ export function HeroSectionOne() {
               duration: 0.3,
               delay: 1.2,
             }}
-            className="px-4 py-10 md:py-20"
+            className="px-4 mt-6 py-10 md:py-20"
           >
             <h2 className="relative z-10 mx-auto max-w-2xl text-center text-xl font-bold md:text-2xl lg:text-3xl">
               Medical Imaging, Simplified
             </h2>
+            <div className="mt-16">
+              <BentoGridDemo />
+            </div>
+          </motion.div>
+          {/* How it works */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              delay: 1.2,
+            }}
+            className="px-4 py-10 md:py-20"
+          >
+            <h2 className="relative z-10 mx-auto max-w-2xl text-center text-xl font-bold md:text-2xl lg:text-3xl">
+              Effortless Image Analysis in 3 Simple Steps
+            </h2>
             <FeaturesSections />
+          </motion.div>
+          {/* Testimonials */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              delay: 1.2,
+            }}
+            className="px-4 py-10 md:py-20"
+          >
+            <h2 className="relative z-10 mx-auto max-w-2xl text-center text-xl font-bold md:text-2xl lg:text-3xl">
+              Testimonials
+            </h2>
+            <AnimatedTestimonialsDemo />
+          </motion.div>
+          <motion.div>
+            <Footer />
           </motion.div>
         </div>
       </div>
