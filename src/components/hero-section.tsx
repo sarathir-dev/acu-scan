@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "motion/react";
-import { FeaturesSections } from "./feature-sections";
 import { AnimatedTestimonialsDemo } from "./AnimatedTestimonials";
 import Footer from "./footer";
 import { BentoGridDemo } from "./BentoGrid";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
 
 export function HeroSectionOne() {
   return (
@@ -141,7 +145,43 @@ export function HeroSectionOne() {
             <h2 className="relative z-10 mx-auto max-w-2xl text-center text-xl font-bold md:text-2xl lg:text-3xl">
               Effortless Image Analysis in 3 Simple Steps
             </h2>
-            <FeaturesSections />
+            <div className="mt-10 flex container justify-center gap-6">
+              <ResizablePanelGroup
+                direction="horizontal"
+                className="max-w-screen rounded-lg border md:min-w-[450px]"
+              >
+                <ResizablePanel defaultSize={50}>
+                  <div className="flex h-[500px] items-center justify-center p-6">
+                    <span className="font-semibold">
+                      Securely upload your 2D medical image in common formats
+                      like JPG or PNG
+                    </span>
+                  </div>
+                </ResizablePanel>
+                <ResizableHandle />
+                <ResizablePanel defaultSize={50}>
+                  <ResizablePanelGroup direction="vertical">
+                    <ResizablePanel defaultSize={50}>
+                      <div className="flex h-full items-center justify-center p-6">
+                        <span className="font-semibold">
+                          Our intelligent AI model instantly analyzes the image,
+                          identifying and classifying organs
+                        </span>
+                      </div>
+                    </ResizablePanel>
+                    <ResizableHandle />
+                    <ResizablePanel defaultSize={50}>
+                      <div className="flex h-full items-center justify-center p-6">
+                        <span className="font-semibold">
+                          View the classified organ and a straightforward,
+                          plain-language explanation of the findings
+                        </span>
+                      </div>
+                    </ResizablePanel>
+                  </ResizablePanelGroup>
+                </ResizablePanel>
+              </ResizablePanelGroup>
+            </div>
           </motion.div>
           {/* Testimonials */}
           <motion.div
