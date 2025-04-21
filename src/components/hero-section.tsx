@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { FeaturesSections } from "./feature-sections";
 
 export function HeroSectionOne() {
   return (
@@ -16,8 +17,8 @@ export function HeroSectionOne() {
           <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
         </div>
         <div className="px-4 py-10 md:py-20">
-          <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
-            {"AI-Powered Precision for Medical Image Analysis"
+          <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold md:text-4xl lg:text-7xl">
+            {"AI-Powered 2D Medical Image Analysis Made Simple"
               .split(" ")
               .map((word, index) => (
                 <motion.span
@@ -48,8 +49,8 @@ export function HeroSectionOne() {
             }}
             className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
           >
-            Transforming medical insights with accurate, efficient, and
-            understandable 3D imaging
+            Unlock clear insights from medical scans with our intuitive
+            AI-driven platform. Understand complex imagery with ease
           </motion.p>
           <motion.div
             initial={{
@@ -65,10 +66,10 @@ export function HeroSectionOne() {
             className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
           >
             <button className="w-60 transform rounded-lg bg-black px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-              Explore Now
+              Demo
             </button>
             <button className="w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
-              Contact Support
+              Learn More
             </button>
           </motion.div>
           <motion.div
@@ -95,6 +96,26 @@ export function HeroSectionOne() {
                 width={1000}
               />
             </div>
+          </motion.div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              delay: 1.2,
+            }}
+            className="px-4 py-10 md:py-20"
+          >
+            <h2 className="relative z-10 mx-auto max-w-2xl text-center text-xl font-bold md:text-2xl lg:text-3xl">
+              Medical Imaging, Simplified
+            </h2>
+            <FeaturesSections />
           </motion.div>
         </div>
       </div>
