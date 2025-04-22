@@ -4,11 +4,8 @@ import { motion } from "motion/react";
 import { AnimatedTestimonialsDemo } from "./AnimatedTestimonials";
 import Footer from "./footer";
 import { BentoGridDemo } from "./BentoGrid";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
+import { IconCloudUp, IconCpu, IconEye } from "@tabler/icons-react";
+import Image from "next/image";
 
 export function HeroSectionOne() {
   return (
@@ -95,12 +92,12 @@ export function HeroSectionOne() {
             className="relative z-10 mt-20 rounded-3xl border border-neutral-200 bg-neutral-100 p-4 shadow-md dark:border-neutral-800 dark:bg-neutral-900"
           >
             <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
-              <img
+              <Image
                 src="https://assets.aceternity.com/pro/aceternity-landing.webp"
                 alt="Landing page preview"
-                className="aspect-[16/9] h-auto w-full object-cover"
-                height={1000}
                 width={1000}
+                height={1000}
+                className="aspect-[16/9] h-auto w-full object-cover"
               />
             </div>
           </motion.div>
@@ -142,45 +139,43 @@ export function HeroSectionOne() {
             }}
             className="px-4 py-10 md:py-20"
           >
-            <h2 className="relative z-10 mx-auto max-w-2xl text-center text-xl font-bold md:text-2xl lg:text-3xl">
-              Effortless Image Analysis in 3 Simple Steps
+            <h2 className="relative z-10 mx-auto max-w-2xl text-center text-2xl font-bold md:text-3xl lg:text-4xl mb-8 ">
+              Unlocking Insights: The AcuScan Process
             </h2>
-            <div className="mt-10 flex container justify-center gap-6">
-              <ResizablePanelGroup
-                direction="horizontal"
-                className="max-w-screen rounded-lg border md:min-w-[450px]"
-              >
-                <ResizablePanel defaultSize={50}>
-                  <div className="flex h-[500px] items-center justify-center p-6">
-                    <span className="font-semibold">
-                      Securely upload your 2D medical image in common formats
-                      like JPG or PNG
-                    </span>
-                  </div>
-                </ResizablePanel>
-                <ResizableHandle />
-                <ResizablePanel defaultSize={50}>
-                  <ResizablePanelGroup direction="vertical">
-                    <ResizablePanel defaultSize={50}>
-                      <div className="flex h-full items-center justify-center p-6">
-                        <span className="font-semibold">
-                          Our intelligent AI model instantly analyzes the image,
-                          identifying and classifying organs
-                        </span>
-                      </div>
-                    </ResizablePanel>
-                    <ResizableHandle />
-                    <ResizablePanel defaultSize={50}>
-                      <div className="flex h-full items-center justify-center p-6">
-                        <span className="font-semibold">
-                          View the classified organ and a straightforward,
-                          plain-language explanation of the findings
-                        </span>
-                      </div>
-                    </ResizablePanel>
-                  </ResizablePanelGroup>
-                </ResizablePanel>
-              </ResizablePanelGroup>
+            <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-4">
+                  <IconCloudUp className="w-8 h-8 md:w-10 md:h-10" />{" "}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Your Image</h3>
+                <p className="max-w-xs">Upload any 2D medical scan.</p>
+              </div>
+
+              <div className="hidden md:block">→</div>
+
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-4">
+                  <IconCpu className="w-8 h-8 md:w-10 md:h-10" />{" "}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">AI Engine</h3>
+                <p className="max-w-xs">
+                  Our AI processes and understands the image.
+                </p>
+              </div>
+
+              <div className="hidden md:block">→</div>
+
+              {/* Section 3: Clear Understanding */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-ful flex items-center justify-center mb-4">
+                  <IconEye className="w-8 h-8 md:w-10 md:h-10" />{" "}
+                  {/* Eye/Lightbulb Icon */}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">
+                  Clear Understanding
+                </h3>
+                <p className="max-w-xs">Get results and simple explanations.</p>
+              </div>
             </div>
           </motion.div>
           {/* Testimonials */}
