@@ -7,7 +7,6 @@ import { AnimatedTestimonialsDemo } from "./AnimatedTestimonials";
 import { BentoGridDemo } from "./BentoGrid";
 import Footer from "./footer";
 
-// Animation Variants
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 10 },
   visible: (i = 0) => ({

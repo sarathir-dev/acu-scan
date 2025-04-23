@@ -24,7 +24,7 @@ const services = [
     title: "Secure and Private Image Handling",
     description:
       "We prioritize your privacy with encrypted storage, secure upload pipelines, and compliance with healthcare data standards.",
-    image: "/assets/images/Services3.jpeg",
+    image: "/assets/images/Services3.jpg",
     caption: "Your data is handled with utmost security and privacy.",
   },
   {

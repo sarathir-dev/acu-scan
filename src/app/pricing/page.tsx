@@ -199,6 +199,7 @@ export default function PricingPage() {
       </section>
 
       {/* Footer */}
+      <div className="mt-10"></div>
       <Footer />
       <div className="mt-10"></div>
     </div>
