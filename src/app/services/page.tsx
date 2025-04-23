@@ -60,7 +60,7 @@ const beneficiaries = [
   },
 ];
 
-export default function ServicesPage() {
+export default function page() {
   return (
     <div className="relative mx-auto flex flex-col items-center justify-center">
       <div className="container px-4 py-10 md:py-20">
