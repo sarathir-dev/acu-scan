@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/footer";
+import { motion } from "framer-motion";
 
 // Pricing Plans
 const plans = [
@@ -82,8 +85,13 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 dark:bg-black dark:text-white">
       {/* Pricing Section */}
-      <section className="px-6 py-20 max-w-6xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-4">
+      <motion.section
+        className="px-6 py-20 max-w-6xl mx-auto text-center"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-5xl font-bold mb-4">
           Simple Pricing, No Surprises
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-12">
@@ -91,13 +99,14 @@ export default function PricingPage() {
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <div
+            <motion.div
               key={index}
               className={`rounded-2xl shadow-xl p-8 border transition-all ${
                 plan.highlight
                   ? "bg-gray-100 dark:bg-gray-900 border-blue-500 scale-105"
                   : "bg-white dark:bg-neutral-950 border-gray-200 dark:border-gray-800"
               }`}
+              whileHover={{ scale: 1.05 }}
             >
               <h2 className="text-xl font-semibold mb-2">{plan.title}</h2>
               <p className="text-3xl font-bold mb-4">{plan.price}</p>
@@ -115,13 +124,19 @@ export default function PricingPage() {
               <Button className="w-full">
                 {plan.title === "Enterprise" ? "Contact Us" : "Get Started"}
               </Button>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-6">
+      <motion.section
+        className="py-20 px-6"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What our users say
@@ -131,9 +146,10 @@ export default function PricingPage() {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
-            <div
+            <motion.div
               key={i}
               className="rounded-xl p-6 text-left flex flex-col justify-between shadow-md border"
+              whileHover={{ scale: 1.02 }}
             >
               <p className="mb-6">{t.text}</p>
               <div className="flex items-center gap-4">
@@ -159,13 +175,19 @@ export default function PricingPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <motion.section
+        className="px-6 py-20"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Let&apos;s talk and make it happen
@@ -196,7 +218,7 @@ export default function PricingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <div className="mt-10"></div>
