@@ -1,6 +1,7 @@
 import React from "react";
 import { Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/footer";
 
 // Pricing Plans
 const plans = [
@@ -43,37 +44,37 @@ const testimonials = [
     name: "Sarah Thompson",
     title: "CTO, HealthAI",
     text: "AcuScan revolutionized our medical workflow. The insights it provides from scans are unmatched.",
-    img: "/avatars/avatar1.png",
+    img: "/assets/images/Avatar1.jpg",
   },
   {
     name: "Rahul Menon",
     title: "Data Engineer, BioNexus",
     text: "Clean UI, powerful AI engine, and responsive support. This tool is a game changer for radiologists.",
-    img: "/avatars/avatar2.png",
+    img: "/assets/images/Avatar2.jpg",
   },
   {
     name: "Olivia Reyes",
     title: "Product Manager, MedTech",
     text: "It only took us a day to integrate AcuScan into our pipeline. The results have been outstanding.",
-    img: "/avatars/avatar3.png",
+    img: "/assets/images/Avatar3.jpg",
   },
   {
     name: "David Liu",
     title: "Founder, ScanIQ",
     text: "Their team really understands what clinicians need. We saved weeks in diagnosis time with their platform.",
-    img: "/avatars/avatar4.png",
+    img: "/assets/images/Avatar4.jpg",
   },
   {
     name: "Aisha Mohammed",
     title: "Research Lead, Genomic Vision",
     text: "From precision to performance, AcuScan delivers everything our research team asked for.",
-    img: "/avatars/avatar5.png",
+    img: "/assets/images/Avatar5.jpg",
   },
   {
     name: "Carlos Ramirez",
     title: "Senior Analyst, NeuroScan Corp",
     text: "It’s rare to find AI tools that are this intuitive. Highly recommend AcuScan for any health-tech team.",
-    img: "/avatars/avatar6.png",
+    img: "/assets/images/Avatar6.jpg",
   },
 ];
 
@@ -120,23 +121,21 @@ export default function PricingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white py-20 px-6">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What our users say
           </h2>
-          <p className="text-gray-400">
-            Trusted by teams across health-tech and AI research industries.
-          </p>
+          <p>Trusted by teams across health-tech and AI research industries.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 text-left flex flex-col justify-between shadow-md"
+              className="rounded-xl p-6 text-left flex flex-col justify-between shadow-md border"
             >
-              <p className="text-gray-200 mb-6">{t.text}</p>
+              <p className="mb-6">{t.text}</p>
               <div className="flex items-center gap-4">
                 <img
                   src={t.img}
@@ -166,15 +165,15 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-20 rounded-3xl">
+      <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Let&apos;s talk and make it happen
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="mb-8">
             Reach out to us, and we&apos;ll respond as soon as possible.
           </p>
-          <Button className="bg-black hover:bg-gray-900 text-white text-lg px-6 py-3 rounded-full shadow-xl">
+          <Button className="text-lg px-6 py-3 rounded-full shadow-xl">
             Talk to us
           </Button>
 
@@ -200,9 +199,8 @@ export default function PricingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-gray-400 text-center py-8">
-        <p>© {new Date().getFullYear()} AcuScan. All rights reserved.</p>
-      </footer>
+      <Footer />
+      <div className="mt-10"></div>
     </div>
   );
 }
