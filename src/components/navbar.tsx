@@ -66,7 +66,9 @@ const Navbar = () => {
               Log In
             </Button>
           </Link>
-          <Button size="sm">Sign Up</Button>
+          <Link href="/signup">
+            <Button size="sm">Sign Up</Button>
+          </Link>
         </div>
       </div>
 
