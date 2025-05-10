@@ -7,6 +7,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import ChatNavbar from "@/components/Chat-Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,8 +43,9 @@ export default async function RootLayout({
           {!isLoggedIn && <Navbar />}
           {isLoggedIn ? (
             <SidebarProvider>
+              <ChatNavbar />
               <AppSidebar />
-              <main>
+              <main className="pt-16">
                 <SidebarTrigger />
                 {children}
               </main>

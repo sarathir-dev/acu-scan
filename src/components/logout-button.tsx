@@ -13,9 +13,5 @@ export default function LogoutButton() {
     router.refresh(); // Refresh to update session state
   };
 
-  return (
-    <Button variant="outline" onClick={handleLogout}>
-      Logout
-    </Button>
-  );
+  return <Button onClick={handleLogout}>Logout</Button>;
 }

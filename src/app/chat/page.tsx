@@ -11,7 +11,7 @@ export default async function Page() {
     redirect("/");
   }
   return (
-    <div className="mt-30">
+    <div className="p-16">
       <h1 className="mt-16">From Chat Page</h1>
       <h3>{data.user.email}</h3>
     </div>
