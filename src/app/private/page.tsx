@@ -1,14 +1,14 @@
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 
-import { createClient } from "@/lib/supabase/server";
+// import { createClient } from "@/lib/supabase/server";
 
-export default async function PrivatePage() {
-  const supabase = await createClient();
+// export default async function PrivatePage() {
+//   const supabase = await createClient();
 
-  const { data, error } = await supabase.auth.getUser();
-  if (error || !data?.user) {
-    redirect("/");
-  }
+//   const { data, error } = await supabase.auth.getUser();
+//   if (error || !data?.user) {
+//     redirect("/");
+//   }
 
-  return <p>Hello {data.user.email}</p>;
-}
+//   return <p>Hello {data.user.email}</p>;
+// }

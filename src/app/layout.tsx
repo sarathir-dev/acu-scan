@@ -3,11 +3,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import { Inter } from "next/font/google";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import { createClient } from "@/lib/supabase/server";
-import { redirect } from "next/navigation";
-import ChatNavbar from "@/components/Chat-Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,14 +17,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase.auth.getUser();
-  if (error || !data?.user) {
-    redirect("/");
-  }
-  const isLoggedIn = !!data;
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -40,19 +27,8 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {!isLoggedIn && <Navbar />}
-          {isLoggedIn ? (
-            <SidebarProvider>
-              <ChatNavbar />
-              <AppSidebar />
-              <main className="pt-16">
-                <SidebarTrigger />
-                {children}
-              </main>
-            </SidebarProvider>
-          ) : (
-            <main>{children}</main>
-          )}
+          <Navbar />
+          <main className="pt-16">{children}</main>
         </ThemeProvider>
       </body>
     </html>

@@ -41,13 +41,18 @@ export async function updateSession(request: NextRequest) {
 
   if (
     !user &&
-    !request.nextUrl.pathname.startsWith("/login") &&
-    !request.nextUrl.pathname.startsWith("/auth")
+    !["/", "/auth", "/auth/login", "/auth/register"].some((path) =>
+      request.nextUrl.pathname.startsWith(path)
+    )
   ) {
-    // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
-    return NextResponse.redirect(url);
+    if (request.nextUrl.pathname !== "/") {
+      url.pathname = "/";
+      return NextResponse.redirect(url);
+    } else {
+      // Avoid loop
+      return supabaseResponse;
+    }
   }
 
   // IMPORTANT: You *must* return the supabaseResponse object as it is.
